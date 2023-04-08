@@ -18,7 +18,7 @@
 
 ## 📌 AYNI POD İÇİNDEKİ KONTEYNERLER ARASINDA Kİ İLETİŞİM NASIL SAĞLANIR ?
 
-<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod1.png" width="680" height="580">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod1.png" width="580" height="480">
 
 * İlk olarak , aynı pod'da çalışan iki konteyneriniz varsa , birbileriyle nasıl konuşur ?
 
