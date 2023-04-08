@@ -1,7 +1,7 @@
 # 🎯 POD NEDİR ? 
 
 <p align ="center">
-<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/prod1.png">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod1.png">
 
 
 * Pod , Kuberbetes dünyasının temel bir kavramıdır. En küçük ve basit birimi temsil eder. 
@@ -21,7 +21,7 @@
 ## 📌 AYNI POD İÇİNDEKİ KONTEYNERLER ARASINDA Kİ İLETİŞİM NASIL SAĞLANIR ?
 
 <p align ="center">
-<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/prod2.png">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod2.png">
 </p>
 
 * İlk olarak , aynı pod'da çalışan iki konteyneriniz varsa , birbileriyle nasıl konuşur ?
@@ -33,7 +33,7 @@
 ## 📌 PEKİ AĞ AD ALANI (NETWORK NAMESPACES) NEDİR ?
 
 <p align ="center">
-<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/prod3.png">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod3.png">
 </p>
 
 * Ağ arabirimlerinin (bir ağdaki iki ekipman parçası arasındaki bağlantılar) ve yönlendirme tablolarının (ağ paketlerinin nereye gönderileceğine ilişkin talimatlar) bir koleksiyonudur.
@@ -53,13 +53,75 @@
 * Görsel olarak özetlemem gerekirse : 
 
 <p align ="center">
-<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/prod4.png">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod4.png">
 </p>
 
 <p align ="center">
-<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/prod5.png">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod5.png">
 </p>
 
 <p align ="center">
-<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/prod6.png">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod6.png">
+</p>
+
+## 📌 AYNI DÜĞÜM (NODE) ÜZERİNDEKİ PODLAR ARASINDA İLETİŞİM NASIL SAĞLANIR ?
+
+<p align ="center">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod7.png">
+</p>
+
+* Bir düğümdeki (node) her podun kendi ağ ad alanı vardır. Her podun kendi IP adresi vardır.
+
+* Ve her pod, ağ isteklerini iletmek için eth0 adı verilen tamamen normal bir ethernet cihazına sahip olduğunu düşünür. Ancak Kubernetes numara yapıyor - bu sadece sanal bir ethernet bağlantısı.
+
+* Her pod'un eth0 cihazı aslında node'daki sanal bir ethernet cihazına bağlıdır.
+
+* Sanal ethernet cihazı, pod'un ağını node'a bağlayan bir tüneldir. Bu bağlantının iki tarafı vardır - pod tarafında eth0 olarak adlandırılır ve düğüm tarafında vethX olarak adlandırılır.
+
+* Neden X ? Düğümdeki her pod için bir vethX bağlantısı vardır. (Yani veth1, veth2, veth3, vb.)
+
+* Bir pod başka bir düğümün IP adresine istekte bulunduğunda, bu isteği kendi eth0 arayüzü üzerinden yapar. Bu, düğümün ilgili sanal vethX arayüzüne tünel oluşturur.
+
+* Peki o zaman istek diğer pod'a nasıl ulaşır? 
+
+* Düğüm bir ağ köprüsü kullanır.
+
+## 📌 AĞ KÖPRÜSÜ (NETWORK BRIDGE) NEDİR ?
+
+* Bir ağ köprüsü iki ağı birbirine bağlar.
+
+* Bir istek köprüye ulaştığında, köprü bağlı tüm cihazlara (yani pod'lara) orijinal isteği işlemek için doğru IP adresine sahip olup olmadıklarını sorar.
+
+* Her podun kendi IP adresine sahip olduğunu ve kendi IP adresini bildiğini unutmayın
+
+* Cihazlardan biri biliyorsa, köprü bu bilgiyi depolar ve ayrıca ağ talebinin tamamlanması için verileri orijinal geri iletir.
+
+* Kubernetes'te bu köprüye cbr0 adı verilir. 
+
+* Bir düğüm üzerindeki her pod köprünün bir parçasıdır ve köprü aynı düğüm üzerindeki tüm podları birbirine bağlar.
+
+* Görsel olarak özetlemem gerekirse : 
+
+<p align ="center">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod8.png">
+</p>
+
+<p align ="center">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod9.png">
+</p>
+
+<p align ="center">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod10.png">
+</p>
+
+<p align ="center">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod11.png">
+</p>
+
+<p align ="center">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod12.png">
+</p>
+
+<p align ="center">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod13.png">
 </p>
