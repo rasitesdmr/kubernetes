@@ -1,6 +1,8 @@
 # 🎯 POD NEDİR ? 
 
-<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/prod1.png" align="center">
+<p align ="center">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/prod1.png">
+
 
 * Pod , Kuberbetes dünyasının temel bir kavramıdır. En küçük ve basit birimi temsil eder. 
 
@@ -18,7 +20,9 @@
 
 ## 📌 AYNI POD İÇİNDEKİ KONTEYNERLER ARASINDA Kİ İLETİŞİM NASIL SAĞLANIR ?
 
+<p align ="center">
 <img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/prod2.png" align="center">
+</p>
 
 * İlk olarak , aynı pod'da çalışan iki konteyneriniz varsa , birbileriyle nasıl konuşur ?
 
