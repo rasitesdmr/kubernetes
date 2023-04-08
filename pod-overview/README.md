@@ -64,7 +64,7 @@
 <img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod6.png">
 </p>
 
-## 📌 AYNI DÜĞÜM (NODE) ÜZERİNDEKİ PODLAR ARASINDA İLETİŞİM NASIL SAĞLANIR ?
+## 📌 AYNI DÜĞÜM (NODE) ÜZERİNDEKİ PODLAR ARASINDA Kİ İLETİŞİM NASIL SAĞLANIR ?
 
 <p align ="center">
 <img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod7.png">
@@ -125,3 +125,60 @@
 <p align ="center">
 <img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod13.png">
 </p>
+
+## 📌 FARKLI DÜĞÜMLERDEKİ (NODES) PODLAR ARASINDA Kİ İLETİŞİM NASIL SAĞLANIR ?
+
+* Peki ya podlar farklı düğümlerdeyse?
+
+* Ağ köprüsü (network birdge) tüm bağlı cihazlara (yani podlara) doğru IP adresine sahip olup olmadıklarını sorduğunda, hiçbiri evet demeyecektir.
+
+* Bu kısmın bulut sağlayıcısına ve ağ eklentilerine göre değişebileceğini unutmayın
+
+* Bundan sonra, köprü (bridge) varsayılan ağ geçidine (gateway) geri döner. Bu, küme (cluster) düzeyine gider ve IP adresini arar.
+
+* Küme (cluster) düzeyinde, IP adres aralıklarını çeşitli düğümlerle (nodes) eşleştiren bir tablo vardır. Bu düğümlerdeki podlara bu aralıklardan IP adresleri atanmış olacaktır.
+
+* Örneğin, Kubernetes düğüm (node) 1'deki podlara 100.96.1.1, 100.96.1.2 vb. gibi adresler verebilir. Ve Kubernetes düğüm (node) 2'deki podlara 100.96.2.1, 100.96.2.2 gibi adresler verir.
+
+* Daha sonra bu tablo, 100.96.1.xxx gibi görünen IP adreslerinin düğüm (node) 1'e gitmesi gerektiği ve 100.96.2.xxx gibi adreslerin düğüm (node) 2'ye gitmesi gerektiği gerçeğini saklayacaktır.
+
+* İsteği hangi düğüme (node) göndereceğimizi bulduktan sonra, süreç podlar başından beri aynı düğümdeymiş (node) gibi kabaca aynı şekilde ilerler.
+
+* Görsel olarak özetlemem gerekirse : 
+
+<p align ="center">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod14.png">
+</p>
+
+<p align ="center">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod15.png">
+</p>
+
+<p align ="center">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod16.png">
+</p>
+
+<p align ="center">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod17.png">
+</p>
+
+<p align ="center">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod18.png">
+</p>
+
+<p align ="center">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod19.png">
+</p>
+
+## 📌 PODLAR VE SERVİSLER ARASINDA Kİ İLETİŞİM ?
+
+* Kubernetes'te son bir iletişim modeli daha önemlidir.
+
+* Kubernetes'te bir hizmet, tek bir IP adresini bir dizi pod ile eşlemenizi sağlar. Bir uç noktaya (domain name/IP address) istekte bulunursunuz ve hizmet, istekleri o hizmetteki bir pod'a proxy olarak gönderir.
+
+* Bu, Kubernetes'in her düğümün (node) içinde çalıştırdığı küçük bir işlem olan kube-proxy aracılığıyla gerçekleşir.
+
+* Bu işlem sanal IP adreslerini bir grup gerçek pod IP adresine eşler.
+
+* kube-proxy hizmet sanal IP'sini gerçek bir pod IP'sine eşledikten sonra, istek yukarıdaki bölümlerde olduğu gibi devam eder.
+
