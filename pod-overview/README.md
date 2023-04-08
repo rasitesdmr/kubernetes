@@ -33,7 +33,7 @@
 ## 📌 PEKİ AĞ AD ALANI (NETWORK NAMESPACES) NEDİR ?
 
 <p align ="center">
-<img src = "prod3">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/prod3.png">
 </p>
 
 * Ağ arabirimlerinin (bir ağdaki iki ekipman parçası arasındaki bağlantılar) ve yönlendirme tablolarının (ağ paketlerinin nereye gönderileceğine ilişkin talimatlar) bir koleksiyonudur.
@@ -53,13 +53,13 @@
 * Görsel olarak özetlemem gerekirse : 
 
 <p align ="center">
-<img src = "prod4">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/prod4.png">
 </p>
 
 <p align ="center">
-<img src = "prod5">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/prod5.png">
 </p>
 
 <p align ="center">
-<img src = "prod6">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/prod6.png">
 </p>
