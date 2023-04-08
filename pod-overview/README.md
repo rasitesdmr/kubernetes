@@ -1,6 +1,6 @@
-# 🎯 <font size="5" color="bf4040" face="verdana"> POD NEDİR ? </font>
+# 🎯 POD NEDİR ? 
 
-<img src = "pod2">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod2.png">
 
 * Pod , Kuberbetes dünyasının temel bir kavramıdır. En küçük ve basit birimi temsil eder. 
 
@@ -16,9 +16,9 @@
 
 * Ayrıca , pod'lar kısa ömürlü olabilir ve dinamik bir şekilde oluşturulup silinebilir, bu sayede uygulamanın kaynak tüketimini ve performansını optimize edebiliriz.
 
-## 📌 <font size="4" color="bf4040" face="verdana"> AYNI POD İÇİNDEKİ KONTEYNERLER ARASINDA Kİ İLETİŞİM NASIL SAĞLANIR ? </font>
+## 📌 AYNI POD İÇİNDEKİ KONTEYNERLER ARASINDA Kİ İLETİŞİM NASIL SAĞLANIR ?
 
-<img src = "pod1">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod1.png">
 
 * İlk olarak , aynı pod'da çalışan iki konteyneriniz varsa , birbileriyle nasıl konuşur ?
 
@@ -26,4 +26,4 @@
 
 * Pod içindeki konteynerler aynı ağ ad alanında (network namespace) bulunurlar , ağ kaynaklarını (networking resources) paylaşırlar.
 
-## 📌 <font size="4" color="bf4040" face="verdana"> PEKİ AĞ AD ALANI (NETWORK NAMESPACES) NEDİR ? </font>
+## 📌 PEKİ AĞ AD ALANI (NETWORK NAMESPACES) NEDİR ?
