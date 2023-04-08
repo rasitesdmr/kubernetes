@@ -1,6 +1,6 @@
 # 🎯 POD NEDİR ? 
 
-<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod2.png">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/Screenshot_1.png">
 
 * Pod , Kuberbetes dünyasının temel bir kavramıdır. En küçük ve basit birimi temsil eder. 
 
