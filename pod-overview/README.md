@@ -2,7 +2,7 @@
 
 <p align ="center">
 <img src = "https://github.com/rasitesdmr/kubernetes/blob/master/pod-overview/images/pod1.png">
-
+</p>
 
 * Pod , Kuberbetes dünyasının temel bir kavramıdır. En küçük ve basit birimi temsil eder. 
 
