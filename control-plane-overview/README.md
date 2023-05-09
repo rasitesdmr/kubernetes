@@ -1,7 +1,7 @@
 # 🎯 CONTROL PLANE (MASTER NODE) NEDİR ?
 
 <p align ="center">
-<img src = "cont4">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/control-plane-overview/images/cont4.png">
 </p>
 
 * Kubernetes cluster'ın iki bölümü vardır. Bunlar control plane (master node) ve worker node bölümleridir. Bu yazıda control plane bölümüne değinilecektir.
@@ -9,11 +9,11 @@
 * Bu iki bölümün görsel olarak özeti şu şekildedir : 
 
 <p align ="center">
-<img src = "cont1">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/control-plane-overview/images/cont1.png">
 </p>
 
 <p align ="center">
-<img src = "cont2">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/control-plane-overview/images/cont2.png">
 </p>
 
 * Aslında bunu Worker Node kısmında anlatmam gerekir di ama kubelet terimini bilmeden de master node kısmını anlatmak istemedim.
@@ -21,7 +21,7 @@
 ## 📌 KUBELET NEDİR ?
 
 <p align ="center">
-<img src = "cont3">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/control-plane-overview/images/cont3.png">
 </p>
 
 * Kubelet, Kubernetes sisteminin önemli bir bileşenidir.
@@ -55,7 +55,7 @@
 ## 📌 MASTER NODE NEDİR ?
 
 <p align ="center">
-<img src = "cont5">
+<img src = "https://github.com/rasitesdmr/kubernetes/blob/master/control-plane-overview/images/cont5.png">
 </p>
 
 * Kontrol düzlemi (Control plane) bir Kubernetes kümesinin güç merkezidir.
